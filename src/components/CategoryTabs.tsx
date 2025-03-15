@@ -24,8 +24,8 @@ export function CategoryTabs({
             className={cn(
               "whitespace-nowrap rounded-full px-4 py-1.5 text-sm font-medium transition-colors",
               activeCategory === category
-                ? "bg-apple-gray-900 text-white"
-                : "bg-apple-gray-100 text-apple-gray-700 hover:bg-apple-gray-200"
+                ? "bg-white text-black"
+                : "bg-zinc-800 text-zinc-300 hover:bg-zinc-700"
             )}
           >
             {category}

@@ -57,52 +57,52 @@ const VIDEOS = [
   }
 ];
 
-const TRENDING_VIDEOS = [
+const ANIME_VIDEOS = [
   {
-    id: "t1",
-    title: "Using $10,000 of Apple Products for a Day!",
-    channel: "MKBHD",
-    thumbnail: "https://i.ytimg.com/vi/SFDVJSokFao/maxresdefault.jpg",
-    views: "8.4M views",
+    id: "a1",
+    title: "Zenitsu: Rainy Forest AMV",
+    channel: "Anime Edits",
+    thumbnail: "public/lovable-uploads/8f88744a-05bf-4202-8fba-66c44e71a3bc.png",
+    views: "3.6K views",
     timeAgo: "2 weeks ago",
-    duration: "14:20"
+    duration: "2:15"
   },
   {
-    id: "t2",
-    title: "Apple's Secret M3 Performance Explained!",
-    channel: "Verge",
-    thumbnail: "https://i.ytimg.com/vi/zlM9M9L4LtQ/maxresdefault.jpg",
-    views: "3.2M views",
+    id: "a2",
+    title: "Anime Fanart Images Full HD - 8K",
+    channel: "Anime Arts",
+    thumbnail: "public/lovable-uploads/6ad90bc3-280e-42f1-9937-81c59b02cedc.png",
+    views: "5.3K views",
     timeAgo: "1 month ago",
-    duration: "10:45"
+    duration: "3:45"
   },
   {
-    id: "t3",
-    title: "Apple AirPods Pro 2 Review - Worth The Upgrade?",
-    channel: "iJustine",
-    thumbnail: "https://i.ytimg.com/vi/l_kyKWsQ-G8/maxresdefault.jpg",
-    views: "2.8M views",
-    timeAgo: "5 months ago",
-    duration: "12:18"
+    id: "a3",
+    title: "No Copyright Anime Music Collection",
+    channel: "Anime Sounds",
+    thumbnail: "https://i.ytimg.com/vi/cyo8hVbvnY8/maxresdefault.jpg",
+    views: "2.5K views",
+    timeAgo: "3 weeks ago",
+    duration: "45:20"
   },
   {
-    id: "t4",
-    title: "The Problem with Apple's Ecosystem",
-    channel: "TechLinked",
-    thumbnail: "https://i.ytimg.com/vi/qEsVsFQDTFk/maxresdefault.jpg",
-    views: "1.5M views",
-    timeAgo: "2 weeks ago",
-    duration: "8:42"
+    id: "a4",
+    title: "ASH 2K SUBS Special VFX Pack",
+    channel: "Anime VFX",
+    thumbnail: "https://i.ytimg.com/vi/qB9pHQRDJZo/maxresdefault.jpg",
+    views: "1.8K views",
+    timeAgo: "1 week ago",
+    duration: "10:22"
   }
 ];
 
-const CATEGORIES = ["All", "Apple", "Technology", "Gadgets", "Reviews", "Music", "Entertainment", "Gaming", "Science", "Education"];
+const CATEGORIES = ["All", "Apple", "Anime", "Technology", "Gadgets", "Reviews", "Music", "Entertainment", "Gaming", "Science", "Education"];
 
 const Index = () => {
   const [activeCategory, setActiveCategory] = useState("All");
 
   return (
-    <div className="flex min-h-screen bg-apple-gray-100">
+    <div className="flex min-h-screen bg-black text-white">
       <Sidebar className="hidden md:flex" />
       
       <div className="flex-1 flex flex-col">
@@ -113,16 +113,23 @@ const Index = () => {
             categories={CATEGORIES}
             activeCategory={activeCategory}
             onCategoryChange={setActiveCategory}
-            className="sticky top-16 bg-apple-gray-100/80 backdrop-blur-sm z-10"
+            className="sticky top-16 bg-black/90 backdrop-blur-sm z-10"
           />
           
           <div className="px-6 py-6">
             <div className="mb-10">
+              <h2 className="text-2xl font-bold mb-6">ANIME UPSCALE</h2>
+              <p className="text-zinc-400 mb-4">
+                Repair your Anime quality in just one click,<br />
+                Our Anime Upscaler Tool will Enhance<br />
+                Your Anime into 4k Ultra HD
+              </p>
+              
               <VideoPlayer 
                 title={FEATURED_VIDEO.title}
                 videoSrc={FEATURED_VIDEO.videoSrc}
                 posterSrc={FEATURED_VIDEO.posterSrc}
-                className="animate-fade-in"
+                className="animate-fade-in rounded-xl overflow-hidden"
               />
               
               <div className="mt-4 flex items-start">
@@ -131,8 +138,8 @@ const Index = () => {
                 </div>
                 <div className="ml-3 flex-1">
                   <h1 className="text-xl font-semibold">{FEATURED_VIDEO.title}</h1>
-                  <p className="text-apple-gray-600">{FEATURED_VIDEO.channel}</p>
-                  <p className="text-apple-gray-500 text-sm">{FEATURED_VIDEO.views} • {FEATURED_VIDEO.timeAgo}</p>
+                  <p className="text-zinc-400">{FEATURED_VIDEO.channel}</p>
+                  <p className="text-zinc-500 text-sm">{FEATURED_VIDEO.views} • {FEATURED_VIDEO.timeAgo}</p>
                 </div>
               </div>
             </div>
@@ -145,9 +152,19 @@ const Index = () => {
             />
             
             <VideoSection 
-              title="Trending" 
-              videos={TRENDING_VIDEOS}
+              title="Anime Content" 
+              videos={ANIME_VIDEOS}
               showMoreLink="#"
+              className="animate-slide-up"
+            />
+            
+            <div className="mt-8 mb-4">
+              <h2 className="text-lg font-semibold mb-2">Recent Added</h2>
+            </div>
+            
+            <VideoSection 
+              title="" 
+              videos={ANIME_VIDEOS.slice(0, 2)}
               className="animate-slide-up"
             />
           </div>
