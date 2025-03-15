@@ -4,19 +4,6 @@ import { Header } from "@/components/layout/Header";
 import { Sidebar } from "@/components/layout/Sidebar";
 import { VideoSection } from "@/components/videos/VideoSection";
 import { CategoryTabs } from "@/components/CategoryTabs";
-import { VideoPlayer } from "@/components/videoPlayer/VideoPlayer";
-
-const FEATURED_VIDEO = {
-  id: "featured",
-  title: "Introducing iPhone 15 Pro — Apple",
-  channel: "Apple",
-  thumbnail: "https://i.ytimg.com/vi/xqyUdNY_U6A/maxresdefault.jpg",
-  posterSrc: "https://i.ytimg.com/vi/xqyUdNY_U6A/maxresdefault.jpg",
-  videoSrc: "https://www.w3schools.com/html/mov_bbb.mp4", // Fallback video
-  views: "28M views",
-  timeAgo: "3 months ago",
-  duration: "4:56"
-};
 
 const VIDEOS = [
   {
@@ -96,6 +83,45 @@ const ANIME_VIDEOS = [
   }
 ];
 
+const TRENDING_VIDEOS = [
+  {
+    id: "t1",
+    title: "M3 MacBook Pro Review - Almost Perfect!",
+    channel: "MKBHD",
+    thumbnail: "https://i.ytimg.com/vi/rSfS8UYiuGo/maxresdefault.jpg",
+    views: "3.5M views",
+    timeAgo: "1 month ago",
+    duration: "14:29"
+  },
+  {
+    id: "t2",
+    title: "Introducing iPhone 15 Pro — Apple",
+    channel: "Apple",
+    thumbnail: "https://i.ytimg.com/vi/xqyUdNY_U6A/maxresdefault.jpg",
+    views: "28M views",
+    timeAgo: "3 months ago",
+    duration: "4:56"
+  },
+  {
+    id: "t3",
+    title: "Why Apple Vision Pro Is Revolutionary",
+    channel: "Tech Explained",
+    thumbnail: "https://i.ytimg.com/vi/5JwOZxkO09I/maxresdefault.jpg",
+    views: "2.1M views",
+    timeAgo: "2 months ago",
+    duration: "18:22"
+  },
+  {
+    id: "t4",
+    title: "The NEW M3 iPad Pro Is INCREDIBLE!",
+    channel: "iJustine",
+    thumbnail: "https://i.ytimg.com/vi/6H3YfiX2y90/maxresdefault.jpg", 
+    views: "1.5M views",
+    timeAgo: "2 months ago",
+    duration: "12:08"
+  }
+];
+
 const CATEGORIES = ["All", "Apple", "Anime", "Technology", "Gadgets", "Reviews", "Music", "Entertainment", "Gaming", "Science", "Education"];
 
 const Index = () => {
@@ -113,53 +139,35 @@ const Index = () => {
             categories={CATEGORIES}
             activeCategory={activeCategory}
             onCategoryChange={setActiveCategory}
-            className="sticky top-16 bg-black/90 backdrop-blur-sm z-10"
+            className="sticky top-16 bg-black/95 backdrop-blur-xl z-10"
           />
           
           <div className="px-6 py-6">
-            <div className="mb-10">
-              <h2 className="text-2xl font-bold mb-6">ANIME UPSCALE</h2>
-              <p className="text-zinc-400 mb-4">
-                Repair your Anime quality in just one click,<br />
-                Our Anime Upscaler Tool will Enhance<br />
-                Your Anime into 4k Ultra HD
-              </p>
-              
-              <VideoPlayer 
-                title={FEATURED_VIDEO.title}
-                videoSrc={FEATURED_VIDEO.videoSrc}
-                posterSrc={FEATURED_VIDEO.posterSrc}
-                className="animate-fade-in rounded-xl overflow-hidden"
+            <div className="mb-8">
+              <h2 className="text-2xl font-bold mb-2">Trending Now</h2>
+              <VideoSection 
+                title="" 
+                videos={TRENDING_VIDEOS}
+                className="animate-slide-up"
               />
-              
-              <div className="mt-4 flex items-start">
-                <div className="w-10 h-10 rounded-full bg-gradient-to-br from-apple-red to-apple-blue flex-shrink-0 flex items-center justify-center text-white font-medium">
-                  A
-                </div>
-                <div className="ml-3 flex-1">
-                  <h1 className="text-xl font-semibold">{FEATURED_VIDEO.title}</h1>
-                  <p className="text-zinc-400">{FEATURED_VIDEO.channel}</p>
-                  <p className="text-zinc-500 text-sm">{FEATURED_VIDEO.views} • {FEATURED_VIDEO.timeAgo}</p>
-                </div>
-              </div>
             </div>
             
             <VideoSection 
               title="Recommended" 
               videos={VIDEOS} 
               showMoreLink="#" 
-              className="animate-slide-up"
+              className="animate-slide-up mb-12"
             />
             
             <VideoSection 
               title="Anime Content" 
               videos={ANIME_VIDEOS}
               showMoreLink="#"
-              className="animate-slide-up"
+              className="animate-slide-up mb-12"
             />
             
             <div className="mt-8 mb-4">
-              <h2 className="text-lg font-semibold mb-2">Recent Added</h2>
+              <h2 className="text-lg font-semibold mb-2">Recently Added</h2>
             </div>
             
             <VideoSection 
