@@ -10,30 +10,39 @@ import { Bell, Settings, Share2 } from "lucide-react";
 const MY_VIDEOS = [
   {
     id: "my1",
-    title: "Creating a Cinema 4D Animation - Timelapse",
-    channel: "YourChannel",
-    thumbnail: "https://i.ytimg.com/vi/xFVzl5459MU/maxresdefault.jpg",
-    views: "1.2K views",
+    title: "Zenitsu Thunderclap & Flash compilation",
+    channel: "ASH",
+    thumbnail: "https://i.ytimg.com/vi/StfxRnoI6Qo/maxresdefault.jpg",
+    views: "1.2M views",
     timeAgo: "2 weeks ago",
-    duration: "15:42"
+    duration: "3:42"
   },
   {
     id: "my2",
-    title: "5 Tips for Better iPhone Photography",
-    channel: "YourChannel",
-    thumbnail: "https://i.ytimg.com/vi/8Z1eMy2FoX4/maxresdefault.jpg",
-    views: "3.7K views",
+    title: "Demon Slayer The Movie (Infinity Train) - Tanjiro vs Enmu",
+    channel: "ASH",
+    thumbnail: "https://i.ytimg.com/vi/lbhd6MeaCR0/maxresdefault.jpg",
+    views: "3.7M views",
     timeAgo: "1 month ago",
     duration: "8:15"
   },
   {
     id: "my3",
-    title: "How I Built a Minimal Desk Setup - 2023 Edition",
-    channel: "YourChannel",
-    thumbnail: "https://i.ytimg.com/vi/QfGnMRW1LGo/maxresdefault.jpg",
-    views: "5.9K views",
+    title: "MUZAN vs HASHIRA AND TANJIRO Final Fight - HD Animation",
+    channel: "ASH",
+    thumbnail: "https://i.ytimg.com/vi/1LMAlsb4RIE/maxresdefault.jpg",
+    views: "5.9M views",
     timeAgo: "3 months ago",
     duration: "12:37"
+  },
+  {
+    id: "my4",
+    title: "Tanjiro vs Rui Full Fight HD | Demon Slayer",
+    channel: "ASH",
+    thumbnail: "https://i.ytimg.com/vi/4qvYI_oaEk4/maxresdefault.jpg",
+    views: "7.5M views",
+    timeAgo: "5 months ago",
+    duration: "10:22"
   }
 ];
 
@@ -78,14 +87,14 @@ const Profile = () => {
         <main className="flex-1 px-6 py-8">
           {/* Profile Header */}
           <div className="flex flex-col md:flex-row items-start md:items-center gap-6 mb-10">
-            <Avatar className="w-24 h-24 bg-gradient-to-br from-apple-red to-apple-blue">
-              <AvatarFallback className="text-3xl font-medium">J</AvatarFallback>
+            <Avatar className="w-24 h-24 bg-white text-black">
+              <AvatarFallback className="text-3xl font-medium">A</AvatarFallback>
             </Avatar>
             
             <div className="flex-1">
-              <h1 className="text-2xl font-bold">John Appleseed</h1>
-              <p className="text-zinc-400 mt-1">@johnappleseed • 125K subscribers</p>
-              <p className="text-zinc-500 text-sm mt-2">Creating videos about design, technology, and productivity.</p>
+              <h1 className="text-2xl font-bold">ASH</h1>
+              <p className="text-zinc-400 mt-1">@ash • 125K subscribers</p>
+              <p className="text-zinc-500 text-sm mt-2">Creating anime videos and content about Demon Slayer</p>
               
               <div className="flex flex-wrap gap-3 mt-4">
                 <Button variant="outline" className="bg-zinc-800 border-zinc-700 hover:bg-zinc-700 text-white">
